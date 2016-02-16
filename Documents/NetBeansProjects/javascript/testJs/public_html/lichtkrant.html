@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<HTML>
+<HEAD>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+<!--
+var timerID = null;
+var timerRunning = false;
+var id,pause=0,position=0;
+function ticker()
+{
+var i,k,msg="Welkom op deze JavaScript-site. Geniet van de mogelijkheden!";
+k=(75/msg.length)+1;
+for(i=0;i<=k;i++) msg+=" "+msg;
+document.lichtkrant1.veld1.value=
+msg.substring(position,position+95);
+if(position++==msg/length) position=0;
+id=setTimeout("ticker()",1000/10);
+}
+function action()
+{
+if(!pause) {
+clearTimeout(id);
+pause=1; }
+else {
+ticker();
+pause=0; }
+}
+//-->
+</SCRIPT>
+</HEAD> 
+<BODY>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+//<!--
+document.write('<DIV ALIGN="center">');
+document.write('<FORM NAME="lichtkrant1" ACTION="geen_actie">');
+document.write('<INPUT TYPE="text" NAME="veld1" SIZE="100">');
+document.write('<\/FORM>');
+document.write('<\/DIV>');
+ticker()
+//-->
+</SCRIPT>
+</BODY>
+</HTML>
